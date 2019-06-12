@@ -1,0 +1,28 @@
+Art_Id:
+
+$sql = "SELECT * FROM art WHERE Art_Id='$id'";
+
+Artist_Id:
+
+$sql = "SELECT * FROM artist WHERE Artist_Id='$id'";
+
+Showing between range 1 to 1 M
+
+$sql = "SELECT * FROM art WHERE Price BETWEEN 1 AND 1000000 ORDER BY  Price, Art_Name";
+
+Buying 
+
+$sql = "SELECT * FROM customer WHERE User_name='$cname'";
+$credit = $row['Credit'] + $price;
+$sql = "UPDATE customer SET Credit = '$credit' WHERE User_name = '$cname' ";
+$cid = $row['Customer_Id'];
+$sql = "UPDATE art SET Cid = '$cid' WHERE Art_Id = '$aid' ";
+
+Review 
+
+        $sql = "INSERT INTO comments (uid, ArtCo_Id, date,message) 
+        VALUES ('$uid', '$aid', '$date','$message')";
+
+$sql = "UPDATE comments SET message='$message' WHERE Comm_Id='$Comm_Id'";
+
+$sql = "DELETE FROM comments WHERE Comm_Id='$Comm_Id'";
